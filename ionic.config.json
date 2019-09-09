@@ -1,0 +1,7 @@
+{
+  "name": "uee_app_2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

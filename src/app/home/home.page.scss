@@ -1,0 +1,32 @@
+.a-seat{
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.a-blank-seat{
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.selected-seat{
+  background: linear-gradient(110deg, #c7000b 60%, #ff244d 60%);
+}
+
+.booked-seat{
+  background: linear-gradient(110deg, #565656 60%, #6a6a6a 60%);
+}
+
+.available-seat{
+  background-color: white;
+}
+
+.a-seat p{
+  font-size: 25px;
+  color: black;
+}
+

@@ -1,0 +1,72 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Please Select Seats</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ol class="cabin fuselage" *ngFor="let row of seatList">
+        <li class="row row--1">
+          <ol class="seats" >
+            <li class="seat" *ngFor="let seat of row.seats">
+              <div *ngIf="!seat.isSpace" >
+                <div class="a-seat"
+                     [ngClass]="getBackgroundColor(seat.isSelected, seat.isBooked)"
+                     (click)="onSelectSeat(seat)">
+                  <p>{{seat.seatNo}}</p>
+                </div>
+              </div>
+
+              <div *ngIf="seat.isSpace">
+                <div class="a-blank-seat"></div>
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <div class="a-seat selected-seat">
+            </div>
+            <p>Selected</p>
+            <div class="a-seat available-seat">
+            </div>
+            <p>Available</p>
+            <div class="a-seat booked-seat">
+            </div>
+            <p>Booked</p>
+          </ion-col>
+          <ion-col size="9">
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <p>your seats</p>
+                  <ion-row>
+                    <ion-col size="3" *ngFor="let select of selected">
+                      <div *ngIf="select.isSelected">
+                        <h3>{{select.seatNo}}</h3>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      Price : {{ totalPrice }}
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-end">
+          <ion-col>
+            <ion-button color="secondary">Proceed</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
