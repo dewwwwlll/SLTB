@@ -1,0 +1,84 @@
+<div style="overflow-y: scroll">
+  <ion-grid class="background">
+    <div *ngFor="let singleRecord of selectted_bus_details">
+      <ion-row>
+        <ion-col class="single-card">
+          <ion-row align-items-center justify-content-around class="top-row" >
+            <div>
+              <ion-col>
+                <div>
+                  <ion-row>
+                    <ion-col>
+                      <p style="font-size: 19px;">{{ singleRecord.RootSource }} <br>
+                        <ion-label color="primary"><small>(source)</small></ion-label>
+                      </p>
+                      <ion-label color="primary">{{ singleRecord.StartTime }}</ion-label>
+                    </ion-col>
+                    <ion-col text-center class="item">
+                      <ion-label color="success"><fa-icon icon="arrow-up"></fa-icon></ion-label>
+                    </ion-col>
+                  </ion-row>
+                </div>
+              </ion-col>
+            </div>
+            <div *ngFor="let halt of singleRecord.BusHalts">
+              <div *ngIf="halt.isDestination">
+                <ion-col>
+                  <div>
+                    <ion-row>
+                      <ion-col>
+                        <p style="font-size: 19px;">{{ halt.halt }} <br>
+                          <ion-label color="primary"><small>(destination)</small></ion-label>
+                        </p>
+                        <ion-label color="primary">{{ halt.time }}</ion-label>
+                      </ion-col>
+                      <ion-col text-center class="item">
+                        <ion-label color="danger"><fa-icon icon="arrow-down"></fa-icon></ion-label>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                </ion-col>
+              </div>
+            </div>
+            <div>
+              <ion-col>
+                <div>
+                  <ion-row>
+                    <ion-col>
+                      <ion-label color="medium"><small>{{ singleRecord.RootDestination }}</small></ion-label>
+                    </ion-col>
+                    <ion-col text-center class="item">
+                      <ion-label color="medium"><fa-icon icon="stop-circle"></fa-icon></ion-label>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-label color="medium">{{ singleRecord.EndTime }}</ion-label>
+                  </ion-row>
+                </div>
+              </ion-col>
+            </div>
+          </ion-row>
+          <ion-row>
+            <ion-card>
+              <ion-item>
+                <fa-icon icon="info-circle" slot="start"></fa-icon>
+                <ion-label color="dark">Details</ion-label>
+                <ion-button color="success" fill="outline" slot="end" (click)="bookSeats()">Book Now</ion-button>
+              </ion-item>
+
+              <ion-card-content>
+                <div class="price">
+                  <ion-badge color="danger"><h3>{{singleRecord.Price}} LKR</h3></ion-badge>
+                </div>
+                <p><ion-badge color="warning"><span>Type : </span>{{ singleRecord.Type }}</ion-badge></p>
+                <p><span>Route No : </span>{{ singleRecord.RouteNo }}</p>
+                <p><span>Distance : </span>{{ singleRecord.Distance }} KM</p>
+                <p><span>Description : </span>{{ singleRecord.Description }}</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</div>

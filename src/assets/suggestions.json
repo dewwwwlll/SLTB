@@ -1,0 +1,119 @@
+[
+  {
+    "RouteNo": 100,
+    "Heading": "Shopping",
+    "RootSource": "Moratuwa",
+    "RootDestination": "Colombo",
+    "BusHalts": [
+      {
+        "halt": "Katubadha",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Rathmelane",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Galkissa",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Moratuwa",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Colombo",
+        "time": "6.15 A.M",
+        "isDestination": true
+      }
+    ],
+    "Distance": 20,
+    "StartTime": "6.00 A.M",
+    "EndTime": "8.00 A.M.",
+    "Description": "Short Journy",
+    "Type": "A/C",
+    "Price": "200.00"
+  },
+  {
+    "RouteNo": 200,
+    "Heading": "Nuwara Eliya",
+    "RootSource": "Panadura",
+    "RootDestination": "Colombo",
+    "BusHalts": [
+      {
+        "halt": "Nuwara Eliya",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Colombo",
+        "time": "6.15 A.M",
+        "isDestination": true
+      },
+      {
+        "halt": "Kandy",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Hatton",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Warakapola",
+        "time": "6.15 A.M",
+        "isDestination": false
+      }
+    ],
+    "Distance": 200,
+    "StartTime": "7.00 A.M",
+    "EndTime": "12.00 A.M.",
+    "Description": "Nice for sightseeing.",
+    "Type": "Non A/C",
+    "Price": "200.00"
+  },
+  {
+    "RouteNo": 100,
+    "Heading": "Benthota Beach",
+    "RootSource": "Benthota",
+    "RootDestination": "Colombo",
+    "BusHalts": [
+      {
+        "halt": "Benthota",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Colombo",
+        "time": "6.15 A.M",
+        "isDestination": true
+      },
+      {
+        "halt": "Hikkaduwa",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Hikkaduwa",
+        "time": "6.15 A.M",
+        "isDestination": false
+      },
+      {
+        "halt": "Hikkaduwa",
+        "time": "6.15 A.M",
+        "isDestination": false
+      }
+    ],
+    "Distance": 30,
+    "StartTime": "6.00 A.M",
+    "EndTime": "8.00 A.M.",
+    "Description": "Good for Relaxing",
+    "Type": "Non A/C",
+    "Price": "200.00"
+  }
+]
