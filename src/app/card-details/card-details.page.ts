@@ -229,5 +229,9 @@ export class CardDetailsPage implements OnInit {
 
   }
 
+  goBack() {
+    this.router.navigate(['paymnet1']);
+  }
+
 
 }
