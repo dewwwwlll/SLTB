@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
+
+import { CardDetailsPage } from './card-details.page';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -14,19 +15,21 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fas, far, fab);
 
+const routes: Routes = [
+  {
+    path: '',
+    component: CardDetailsPage
+  }
+];
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     FontAwesomeModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
+    RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [CardDetailsPage]
 })
-export class HomePageModule {}
+export class CardDetailsPageModule {}

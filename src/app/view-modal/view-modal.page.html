@@ -1,0 +1,88 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-title>Modal Content</ion-title>
+        </ion-col>
+
+        <ion-col>
+          <ion-buttons slot="end">
+            <button ion-button (click)="dismissModal()">Close</button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-card-title>
+        <legend>Journey Details</legend>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Source: {{source}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Destination: {{destination}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <p>Departure Time: {{departure}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Arrival Time: {{arrival}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-card-title>
+        <legend>Passenger Details </legend>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Name: {{name}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Mobile Number: {{phone}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <p>NIC: {{nic}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Email: {{email}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
