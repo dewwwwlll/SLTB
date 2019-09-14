@@ -5,7 +5,7 @@
       <ion-grid>
         <ion-row style="height: 100%" >
           <ion-col size="2">
-            <ion-button class="header-button" >
+            <ion-button class="header-button" (click)="goToSearchResults()">
               <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
             </ion-button>
           </ion-col>
@@ -19,10 +19,10 @@
       </ion-grid>
     </ion-toolbar>
   </ion-header>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Please Select Seats</ion-card-title>
-    </ion-card-header>
+  <ion-card class="background">
+    <!--<ion-card-header>-->
+      <!--&lt;!&ndash;<ion-card-title class="select-seats-text">Please Select Seats</ion-card-title>&ndash;&gt;-->
+    <!--</ion-card-header>-->
     <ion-card-content>
       <ol class="cabin fuselage" *ngFor="let row of seatList">
         <li class="row row--1">
@@ -32,7 +32,7 @@
                 <div class="a-seat"
                      [ngClass]="getBackgroundColor(seat.isSelected, seat.isBooked)"
                      (click)="onSelectSeat(seat)">
-                  <p>{{seat.seatNo}}</p>
+                  <p [ngStyle]="{'color': seat.isSelected || seat.isBooked ? 'white' : '#001359'}">{{seat.seatNo}}</p>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@
           </ion-col>
           <ion-col size="9">
             <ion-card>
-              <ion-card-content>
+              <ion-card-content class="other-text">
                 <ion-grid>
                   <p>your seats</p>
                   <ion-row>
@@ -72,7 +72,7 @@
                 <ion-grid>
                   <ion-row>
                     <ion-col>
-                      Price : {{ totalPrice }}
+                      <ion-badge color="warning" style="font-size: 20px;">Price : {{ totalPrice }}</ion-badge>
                     </ion-col>
                   </ion-row>
                 </ion-grid>
@@ -82,7 +82,7 @@
         </ion-row>
         <ion-row class="ion-justify-content-end">
           <ion-col>
-            <ion-button (click)="goToPayment()" color="secondary">Proceed</ion-button>
+            <ion-button (click)="goToPayment()" color="primary">Proceed</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>

@@ -60,4 +60,8 @@ export class HomePage implements OnInit {
     this.router.navigate(['paymnet1']);
   }
 
+  goToSearchResults() {
+    this.router.navigate(['search-results']);
+  }
+
 }

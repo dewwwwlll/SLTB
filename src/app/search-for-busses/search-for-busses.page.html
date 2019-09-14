@@ -50,6 +50,12 @@
 
 <ion-content>
 
+  <ion-fab vertical="center" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="rateUs()">
+      <ion-icon name="ios-star"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 <div class="search-form">
   <ion-item>
     <fa-icon [ngClass]="{'focus':isFocus2}" icon="map-marker-alt"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -227,6 +233,7 @@
         <p>Sri Lanka Transport Board</p>
         <p>Customer Hotline : 077 2872877 </p>
         <p>Support Email: sltb@express.lk</p>
+        <ion-badge color="warning"><a style="text-decoration: underline" (click)="goToTerms()">Terms and Conditions</a></ion-badge>
       </ion-card>
 
     </ion-card>

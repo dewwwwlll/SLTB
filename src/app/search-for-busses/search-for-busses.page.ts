@@ -362,4 +362,12 @@ export class SearchForBussesPage {
       return false;
     }
   }
+
+  rateUs() {
+    this.router.navigate(['rating-page']);
+  }
+
+  goToTerms() {
+    this.router.navigate(['terms-and-conditions']);
+  }
 }

@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViewModalPage } from './view-modal.page';
+import { TermsAndConstionsPage } from './terms-and-constions.page';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -18,7 +18,7 @@ library.add(fas, far, fab);
 const routes: Routes = [
   {
     path: '',
-    component: ViewModalPage
+    component: TermsAndConstionsPage
   }
 ];
 
@@ -30,6 +30,6 @@ const routes: Routes = [
     FontAwesomeModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ViewModalPage]
+  declarations: [TermsAndConstionsPage]
 })
-export class ViewModalPageModule {}
+export class TermsAndConstionsPageModule {}

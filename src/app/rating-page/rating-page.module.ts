@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViewModalPage } from './view-modal.page';
+import { RatingPagePage } from './rating-page.page';
+import {IonicRatingModule} from 'ionic4-rating/dist';
+import {FeedbackContentComponent} from './feedback-content/feedback-content.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -18,7 +20,7 @@ library.add(fas, far, fab);
 const routes: Routes = [
   {
     path: '',
-    component: ViewModalPage
+    component: RatingPagePage
   }
 ];
 
@@ -28,8 +30,10 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    IonicRatingModule, // Put ionic-rating module here
     RouterModule.forChild(routes)
   ],
-  declarations: [ViewModalPage]
+  declarations: [RatingPagePage, FeedbackContentComponent]
 })
-export class ViewModalPageModule {}
+export class RatingPagePageModule {}

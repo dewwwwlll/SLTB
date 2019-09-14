@@ -17,6 +17,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {ViewModalPage} from "./view-modal/view-modal.page";
 import {ViewModalPageModule} from "./view-modal/view-modal.module";
+import {RatingPagePageModule} from "./rating-page/rating-page.module";
 
 library.add(fas, far, fab);
 
@@ -29,7 +30,8 @@ library.add(fas, far, fab);
       AppRoutingModule,
       HttpClientModule,
       FontAwesomeModule,
-      ViewModalPageModule
+      ViewModalPageModule,
+      RatingPagePageModule
   ],
   providers: [
     StatusBar,

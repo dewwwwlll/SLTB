@@ -4,7 +4,7 @@
         <ion-grid>
             <ion-row style="height: 100%" >
                 <ion-col size="2">
-                    <ion-button class="header-button" >
+                    <ion-button class="header-button" (click)="goToSeats()">
                         <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
                     </ion-button>
                 </ion-col>
@@ -19,8 +19,9 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content style="background-color: #007aff">
-  <ion-card>
+<ion-content>
+  <div class="background">
+  <ion-card class="background-white">
     <ion-card-header>
       <h1>Journey Details</h1>
       <h2>Bus Type: Normal A/C</h2>
@@ -67,7 +68,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="background-white">
     <ion-card-header>
       <h1>My Details <span style="color: red">(Mandatory)</span></h1>
 
@@ -112,7 +113,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="background-white">
     <ion-card-header>
       <ion-grid>
         <ion-row>
@@ -132,7 +133,7 @@
 
   </ion-card>
 
-  <ion-card class="card" *ngIf="!IsArrowDown" style="transition: 0.29s all linear">
+  <ion-card class="card background-white" *ngIf="!IsArrowDown" style="transition: 0.29s all linear">
     <ion-grid  *ngFor="let seat of seats">
 
       <ion-row>
@@ -177,7 +178,7 @@
     </ion-grid>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="background-white">
     <ion-card-header>
       <ion-card-title>
         <h2 style="color: #007aff">Payment Method</h2>
@@ -218,4 +219,5 @@
 
     </ion-card-content>
   </ion-card>
+  </div>
 </ion-content>

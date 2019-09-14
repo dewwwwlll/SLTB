@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row style="height: 100%" >
+        <ion-col size="2">
+          <ion-button (click)="goBack()" class="header-button" >
+            <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+        </ion-col>
+        <ion-col class="header-font">
+          SLTB EXPRESS
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<div class="scroll-content feedback-background">
+  <div>
+    <ion-card>
+      <ion-card-header text-center class="feedback-header">
+        <ion-card-title class="feedback">
+          Feedback
+        </ion-card-title>
+        <ion-card-content>
+          <rating [(ngModel)]="rate"
+                  readonly="false"
+                  required
+                  size="default">
+          </rating>
+          <ion-label *ngIf="blank" color="danger">Please use rating stars!</ion-label>
+          <ion-item>
+            <ion-textarea [(ngModel)]="comments" placeholder="Share you're thoughts..."></ion-textarea>
+          </ion-item>
+          <ion-button (click)="onSubmit()" color="primary" shape="full" expand="block">Submit</ion-button>
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <div>
+    <app-feedback-content
+            *ngFor="let feedback of feedbackArray"
+            [feedback]="feedback"></app-feedback-content>\
+    <br/>
+  </div>
+</div>
+

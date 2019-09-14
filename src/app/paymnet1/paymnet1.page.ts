@@ -222,4 +222,8 @@ export class Paymnet1Page implements OnInit {
 
   }
 
+  goToSeats() {
+    this.router.navigate(['home']);
+  }
+
 }
