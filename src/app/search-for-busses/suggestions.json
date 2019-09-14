@@ -1,0 +1,93 @@
+[
+  {
+    "RouteNo": 100,
+    "Heading": "Water World",
+    "RootSource": "Moratuwa",
+    "RootDestination": "Pettah",
+    "BusHalts": [
+      {
+        "halt": "Katubedda",
+        "isDestination": false
+      },
+      {
+        "halt": "Rathmalana",
+        "isDestination": false
+      },
+      {
+        "halt": "Mount Lavinia",
+        "isDestination": false
+      },
+      {
+        "halt": "Moratuwa",
+        "isDestination": false
+      },
+      {
+        "halt": "Pettah",
+        "isDestination": false
+      }
+    ],
+    "Distance": 20,
+    "StartTime": "6.00 A.M",
+    "EndTime": "8.00 A.M.",
+    "Description": "Short Journy",
+    "image_url": "../../assets/Image/imageTest3.png"
+  },
+  {
+    "RouteNo": 200,
+    "Heading": "Nuwara Eliya",
+    "RootSource": "Colombo",
+    "RootDestination": "Nuwara Eliya",
+    "BusHalts": [
+      {
+        "halt": "Nuwara Eliya",
+        "isDestination": false
+      },
+      {
+        "halt": "Colombo",
+        "isDestination": false
+      },
+      {
+        "halt": "Kandy",
+        "isDestination": false
+      },
+      {
+        "halt": "Hatton",
+        "isDestination": false
+      },
+      {
+        "halt": "Warakapola",
+        "isDestination": false
+      }
+    ],
+    "Distance": 200,
+    "StartTime": "7.00 A.M",
+    "EndTime": "12.00 A.M.",
+    "Description": "Nice for sightseeing.",
+    "image_url": "../../assets/Image/imageTest1.png"
+  },
+  {
+    "RouteNo": 110,
+    "Heading": "Benthota Beach",
+    "RootSource": "Colombo",
+    "RootDestination": "Benthota",
+    "BusHalts": [
+      {
+        "halt": "Benthota",
+        "isDestination": false
+      },
+      {
+        "halt": "Colombo",
+        "isDestination": false
+      },
+      {
+        "halt": "Hikkaduwa",
+        "isDestination": false
+      }
+    ],
+    "Distance": 30,
+    "StartTime": "6.00 A.M",
+    "EndTime": "8.00 A.M.",
+    "Description": "Nice View. Good for Relaxing",
+    "image_url": "../../assets/Image/imageTest2.png"
+  }
+]
