@@ -1,9 +1,9 @@
 [
   {
     "RouteNo": 100,
-    "Heading": "Water World",
-    "RootSource": "Moratuwa",
-    "RootDestination": "Pettah",
+    "Heading": "Colombo - Kataragama",
+    "RootSource": "Colombo",
+    "RootDestination": "Kataragama",
     "BusHalts": [
       {
         "halt": "Katubedda",
@@ -34,7 +34,7 @@
   },
   {
     "RouteNo": 200,
-    "Heading": "Nuwara Eliya",
+    "Heading": "Colombo - Nuwara Eliya",
     "RootSource": "Colombo",
     "RootDestination": "Nuwara Eliya",
     "BusHalts": [
@@ -67,9 +67,9 @@
   },
   {
     "RouteNo": 110,
-    "Heading": "Benthota Beach",
+    "Heading": "Colombo - Galle",
     "RootSource": "Colombo",
-    "RootDestination": "Benthota",
+    "RootDestination": "Galle",
     "BusHalts": [
       {
         "halt": "Benthota",

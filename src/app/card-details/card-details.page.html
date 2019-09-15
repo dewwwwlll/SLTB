@@ -19,8 +19,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="background-color: #007aff">
-  <ion-card>
+<ion-content style="background-color: #007aff" >
+<div class="background">
+  <ion-card class="background-white">
     <ion-card-header>
       <ion-card-title text-center="">
         <ion-card-title>Payment Details</ion-card-title>
@@ -51,20 +52,24 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="background-white">
     <ion-card-header>
       <ion-grid>
-        <ion-row>
+        <ion-row justify-content-center>
+            <h3>Card Details</h3>
+        </ion-row>
+        <ion-row justify-content-around>
           <ion-col size="2">
-            <ion-img src="assets/imgs/visa-logo-preview.png" height="40" width="40"></ion-img>
-            <ion-img src="assets/imgs/master_card logo.png" height="40" width="40"></ion-img>
+            <ion-img src="assets/imgs/visa-logo-preview.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
           </ion-col>
           <ion-col size="2">
-            <ion-card-title>Card Details</ion-card-title>
+            <ion-img src="assets/imgs/master_card logo.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
           </ion-col>
           <ion-col size="2">
-            <ion-img src="assets/imgs/discover.png" height="40" width="40"></ion-img>
-            <ion-img src="assets/imgs/diners_club.png" height="40" width="40"></ion-img>
+            <ion-img src="assets/imgs/discover.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+          <ion-col size="2">
+            <ion-img src="assets/imgs/diners_club.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -73,7 +78,7 @@
 
   </ion-card>
 
-  <ion-card>
+  <ion-card class="background-white">
     <ion-card-header text-center="">
       <ion-img src="assets/imgs/sampath.png" height="50" width="200"></ion-img>
     </ion-card-header>
@@ -85,12 +90,10 @@
       </ion-item>
       <ion-item>
         <ion-label floating>Card Number</ion-label>
-        <ion-input type="tel" autocomplete="cc-exp" id="cc-exp" [(ngModel)]="cardNumber" (change)="checkSupported()"></ion-input>
-
-      </ion-item>
-      <ion-item>
-        <ion-img [src]="imageUrl" height="50" width="50"></ion-img>
-      </ion-item>
+        <div *ngIf="imageUrl">
+          <ion-img [src]="imageUrl" height="50" width="50" style="width: 82px; height: 50px;"></ion-img>
+        </div>
+        <ion-input type="tel" autocomplete="cc-exp" id="cc-exp" [(ngModel)]="cardNumber" (change)="checkSupported()"></ion-input>      </ion-item>
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -108,14 +111,15 @@
           </ion-col>
         </ion-row>
 
-        <ion-row style="text-align: center">
-          <button ion-button color="secondary" (click)="payButton()">
+        <ion-row justify-content-end style="text-align: center">
+          <ion-button color="success" (click)="payButton()">
             <ion-icon name="cash"></ion-icon>
             Pay
-          </button>
+          </ion-button>
           <!--<button type="button" (click)="checkSupported()">validity</button>-->
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
+</div>
 </ion-content>

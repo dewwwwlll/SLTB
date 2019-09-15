@@ -27,7 +27,7 @@
 
         <!--<ion-col>-->
           <!--<ion-buttons slot="end">-->
-            <!--<button ion-button (click)="dismissModal()">Close</button>-->
+            <!--<ion-button (click)="dismissModal()">Close</ion-button>-->
           <!--</ion-buttons>-->
         <!--</ion-col>-->
       </ion-row>
@@ -99,7 +99,9 @@
             <p>Email: {{email}}</p>
           </ion-col>
         </ion-row>
-
+        <ion-row justify-content-end>
+          <ion-button color="danger" (click)="dismissModal()">Close</ion-button>
+        </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>

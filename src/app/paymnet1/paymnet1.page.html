@@ -78,24 +78,24 @@
       <ion-grid>
         <ion-row>
           <ion-item>
-            <ion-label floating>Name <span style="color: red">*</span></ion-label>
-            <ion-input type="text" [(ngModel)]="name" required></ion-input>
+            <!--<ion-label floating>Name <span style="color: red">*</span></ion-label>-->
+            <ion-input placeholder="Enter Name" type="text" [(ngModel)]="name" required></ion-input>
             <ion-label *ngIf="IsEmptyName" ></ion-label>
           </ion-item>
         </ion-row>
 
         <ion-row>
-          <ion-col>
+          <ion-col size="6">
             <ion-item>
-              <ion-label floating>Phone <span style="color: red">*</span></ion-label>
-              <ion-input type="number" [(ngModel)]="phone" required></ion-input>
+              <!--<ion-label floating>Phone <span style="color: red">*</span></ion-label>-->
+              <ion-input placeholder="Enter Phone" type="number" [(ngModel)]="phone" required></ion-input>
             </ion-item>
           </ion-col>
 
-          <ion-col>
+          <ion-col size="6">
             <ion-item>
-              <ion-label floating>NIC/Passport Number </ion-label>
-              <ion-input type="text" [(ngModel)]="nic"  maxlength="10"></ion-input>
+              <!--<ion-label floating>NIC/Passport </ion-label>-->
+              <ion-input placeholder="Enter Nic/Passport" type="text" [(ngModel)]="nic"  maxlength="10"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -103,8 +103,8 @@
 
         <ion-row>
           <ion-item>
-            <ion-label floating>Email </ion-label>
-            <ion-input type="email" [(ngModel)]="email"></ion-input>
+            <!--<ion-label floating>Email </ion-label>-->
+            <ion-input placeholder="Enter Email" type="email" [(ngModel)]="email"></ion-input>
           </ion-item>
         </ion-row>
 
@@ -144,7 +144,7 @@
         <ion-col>
           <!--<ion-row>-->
           <ion-item>
-            <ion-checkbox (click)="checkSeat(seat.seatNo)" [checked]="seat.IsSeatChecked"></ion-checkbox>
+            <ion-checkbox (click)="checkSeat(seat.seatNo, $event)" [checked]="seat.IsSeatChecked"></ion-checkbox>
             <ion-label >My Seat</ion-label>
           </ion-item>
           <!--</ion-row>-->
@@ -188,9 +188,10 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
+
           <ion-col>
-            <ion-img src="assets/imgs/master_card logo.png" height="60" width="80"></ion-img>
-            <ion-img src="assets/imgs/visa-logo-preview.png" height="60" width="80"></ion-img>
+            <ion-img src="assets/imgs/master_card logo.png" height="60" width="80" style="height: 60px; width: 60px"></ion-img>
+            <ion-img src="assets/imgs/visa-logo-preview.png" height="60" width="80" style="height: 60px; width: 60px"></ion-img>
           </ion-col>
 
           <ion-col>

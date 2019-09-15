@@ -60,7 +60,7 @@ export class CardDetailsPage implements OnInit {
 
   checkLuhn() {
     var value = this.cardNumber;
-    value = value.replace(/\D/g, '');
+    value = value.toString().replace(/\D/g, '');
     var sum = 0;
     var shouldDouble = false;
     // loop through values starting at the rightmost side
@@ -137,30 +137,34 @@ export class CardDetailsPage implements OnInit {
     }
   }
 
-  async payButton() {
+  payButton() {
     var validCardNumber = this.checkSupported();
     var validCVV = this.validateCVV();
 
     if (!validCVV) {
-      const toast = await this.toastCtrl.create({
+      const toast = this.toastCtrl.create({
         message: 'Please enter a valid CVV Number',
         duration: 3000,
         position: 'bottom',
         showCloseButton: true
+      }).then(alert => {
+        alert.present();
       });
 
-      await toast.present();
+      // toast.present();
     }
 
     if (!validCardNumber) {
-      const toast = await this.toastCtrl.create({
+      const toast = this.toastCtrl.create({
         message: 'Please enter a valid Card Number',
         duration: 3000,
         position: 'bottom',
         showCloseButton: true
+      }).then(alert => {
+        alert.present();
       });
 
-      await toast.present();
+      // await toast.present();
     }
 
     if (validCardNumber && validCVV) {

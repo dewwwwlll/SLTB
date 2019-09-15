@@ -61,9 +61,10 @@ export class Paymnet1Page implements OnInit {
     this.seatMobile = '';
     this.seatNIC = '';
 
+
     for (let i = 0; i < 3; i++) {
       this.seats.push({
-        seatNo: i + 20,
+        seatNo: i + 50,
         IsSeatChecked: false,
         seatName: '',
         seatMobile: '',
@@ -98,17 +99,19 @@ export class Paymnet1Page implements OnInit {
     this.IsAgreed = !this.IsAgreed;
   }
 
-  async validateName() {
+  validateName(){
     if (this.name === '') {
       this.IsEmptyName = true;
-      const toast = await this.toastCtrl.create({
+      const toast =  this.toastCtrl.create({
         message: 'Please enter your name',
         duration: 3000,
         position: 'bottom',
         showCloseButton: true
+      }).then(alert => {
+        alert.present();
       });
-
-      await toast.present();
+      //
+      // toast.present();
       return false;
     }
     else {
@@ -117,17 +120,19 @@ export class Paymnet1Page implements OnInit {
     }
   }
 
-  async validateMobile() {
+  validateMobile() {
     if (this.phone === undefined) {
       this.IsEmptyPhone = true;
-      const toast = await this.toastCtrl.create({
+      const toast = this.toastCtrl.create({
         message: 'Please enter your phone number',
         duration: 3000,
         position: 'bottom',
         showCloseButton: true
+      }).then(alert => {
+        alert.present();
       });
 
-      await toast.present();
+      // toast.present();
       return false;
     }
     else {
@@ -137,16 +142,18 @@ export class Paymnet1Page implements OnInit {
 
   }
 
-  async validateNIC() {
+  validateNIC() {
     if (this.nic.length !== 10) {
-      const toast = await this.toastCtrl.create({
+      const toast = this.toastCtrl.create({
         message: 'Your nic number should contain 10 characters',
         duration: 3000,
         position: 'bottom',
         showCloseButton: true
+      }).then(alert => {
+        alert.present();
       });
 
-      await toast.present();
+      // toast.present();
       return false;
     }
     else {
@@ -160,21 +167,17 @@ export class Paymnet1Page implements OnInit {
   }
 
   checkSubmit() {
-    var IsValidName = this.validateName();
-    var IsValidMobile = this.validateMobile();
     var IsValidNIC = this.validateNIC();
+    var IsValidMobile = this.validateMobile();
+    var IsValidName = this.validateName();
 
     if (IsValidName && IsValidMobile && IsValidNIC) {
+      console.log('insdide');
       this.passengerDetails = {
         name: this.name,
         phone: this.phone,
         nic: this.nic,
         email: this.email
-      };
-
-      const parameterData = {
-          journeyDetails: this.journeyDetails,
-          passengerDetails: this.passengerDetails
       };
 
       let navigationExtras: NavigationExtras = {
@@ -185,21 +188,18 @@ export class Paymnet1Page implements OnInit {
       };
 
       this.router.navigate(['card-details'], navigationExtras);
-      // var ctrl = this.navCtrl.push(CardDetailsPage, {
-      //   journeyDetails: this.journeyDetails,
-      //   passengerDetails: this.passengerDetails
-      // });
 
     }
   }
 
-  checkSeat(seatNo) {
+  checkSeat(seatNo, event) {
 
     this.seats.filter(value => {
+      console.log(event.toElement.checked);
       if (value.seatNo === seatNo) {
         value.IsSeatChecked = !value.IsSeatChecked;
 
-        if (value.IsSeatChecked) {
+        if (!event.toElement.checked) {
           value.seatName = this.name;
           value.seatMobile = this.phone;
           value.seatNIC = this.nic;

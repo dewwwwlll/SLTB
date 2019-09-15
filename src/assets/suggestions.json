@@ -2,8 +2,8 @@
   {
     "RouteNo": 100,
     "Heading": "Shopping",
-    "RootSource": "Moratuwa",
-    "RootDestination": "Colombo",
+    "RootSource": "Colombo",
+    "RootDestination": "Bandarawela",
     "BusHalts": [
       {
         "halt": "Katubadha",
@@ -26,7 +26,7 @@
         "isDestination": false
       },
       {
-        "halt": "Colombo",
+        "halt": "Kandy",
         "time": "6.15 A.M",
         "isDestination": true
       }
@@ -40,9 +40,9 @@
   },
   {
     "RouteNo": 200,
-    "Heading": "Nuwara Eliya",
-    "RootSource": "Panadura",
-    "RootDestination": "Colombo",
+    "Heading": "Colombo",
+    "RootSource": "Colombo",
+    "RootDestination": "Kandy",
     "BusHalts": [
       {
         "halt": "Nuwara Eliya",
@@ -50,7 +50,7 @@
         "isDestination": false
       },
       {
-        "halt": "Colombo",
+        "halt": "Kandy",
         "time": "6.15 A.M",
         "isDestination": true
       },
@@ -80,8 +80,8 @@
   {
     "RouteNo": 100,
     "Heading": "Benthota Beach",
-    "RootSource": "Benthota",
-    "RootDestination": "Colombo",
+    "RootSource": "Colombo",
+    "RootDestination": "Matale",
     "BusHalts": [
       {
         "halt": "Benthota",
@@ -89,7 +89,7 @@
         "isDestination": false
       },
       {
-        "halt": "Colombo",
+        "halt": "Kandy",
         "time": "6.15 A.M",
         "isDestination": true
       },

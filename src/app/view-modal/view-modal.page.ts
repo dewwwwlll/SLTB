@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController, NavParams} from "@ionic/angular";
+import {ModalController, NavController, NavParams} from "@ionic/angular";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-view-modal',
@@ -21,7 +22,7 @@ export class ViewModalPage implements OnInit {
   phone: String;
   email: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navParams: NavParams, private viewCtrl: ModalController, private router: Router) {
     this.source = navParams.get('source');
     this.title = navParams.get('title');
     this.destination = navParams.get('destination');
@@ -33,11 +34,11 @@ export class ViewModalPage implements OnInit {
     this.email = navParams.get('email');
   }
 
+  dismissModal() {
+    let data = [];
+    this.viewCtrl.dismiss(data);
+  }
 
-  // dismissModal() {
-  //   let data = [];
-  //   this.viewCtrl.dismiss(data);
-  // }
   ngOnInit() {
   }
 
