@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row style="height: 100%" >
+        <ion-col size="2">
+          <ion-button class="header-button" >
+            <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+        </ion-col>
+        <ion-col class="header-font">
+          SLTB EXPRESS
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: #007aff">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title text-center="" style="color: #32db64">
+        Your Payment is Successful!!!
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="primary" (click)="viewModal()">View Details</ion-button>
+          </ion-col>
+
+          <ion-col></ion-col>
+
+          <ion-col >
+            <ion-button (click)="goToHome()" color="danger">Home Page</ion-button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

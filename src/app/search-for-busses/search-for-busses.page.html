@@ -1,0 +1,243 @@
+
+<ion-app>
+
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Start Location" align="center"></ion-input>
+
+      </ion-item>
+
+
+      <ion-item>
+        <ion-input placeholder="End Destination" align="center"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label> Date</ion-label>
+        <ion-datetime value="2019-08-31" min="2019-08-31" max="3100-12-12" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+
+
+      <!--<ion-item>-->
+
+
+      <!--<ion-item-divider></ion-item-divider>-->
+
+      <ion-button expand="full">Search</ion-button>
+
+    </ion-list>
+
+  </ion-content>
+</ion-app>
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row style="height: 100%" >
+        <ion-col size="4">
+          <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+        </ion-col>
+        <ion-col class="header-font">
+          SLTB EXPRESS
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="rateUs()">
+      <ion-icon name="ios-star"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+<div class="search-form">
+  <ion-item>
+    <fa-icon [ngClass]="{'focus':isFocus2}" icon="map-marker-alt"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <ion-label [ngClass]="{'focus':isFocus2}">Start Destination</ion-label>
+    <ion-input
+            id="startValue"
+            [(ngModel)]="start"
+            (ionChange)="startChanged()"
+            (ionFocus)="isFocus2=true"
+            (ionBlur)="isFocus2=false"
+            clearUnput=true
+            align="center">
+    </ion-input>
+
+
+  </ion-item>
+
+
+  <ion-list
+          [hidden]="checkStartIsTrue()">
+    <ion-card
+            *ngFor="let result of startResult">
+      <ion-card-content
+              (click)="setStart(result)" >
+        {{result}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-item>
+  <fa-icon [ngClass]="{'focus':isFocus}" icon="map-marker-alt"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <ion-label  [ngClass]="{'focus':isFocus}">End Destination</ion-label>
+    <ion-input
+            id="destinationValue"
+            [(ngModel)]="destination"
+            clearInput=true
+            (ionFocus)="isFocus=true"
+            (ionBlur)="isFocus=false"
+            (ionChange)="destinationChanged()"
+            align="center">
+    </ion-input>
+
+
+
+
+  </ion-item>
+
+  <ion-list
+          [hidden]="checkDestinationIsTrue()">
+    <ion-card
+            *ngFor="let result of destinationResult">
+      <ion-card-content
+              (click)="setDestination(result)" >
+        {{result}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+  <ion-item>
+    <ion-label>Select Date</ion-label>
+    <ion-datetime
+
+            displayFormat="YYYY MMMM D"
+            [(ngModel)] = "mydate" (ionChange)="dateChanged(Servent)"
+            id="dateTime"
+            clearInput=true
+            (ionChange)="destinationChanged()"
+            value="2019-08-31" min="2019-08-31" max="3100-12-12"
+    >
+
+
+    </ion-datetime>
+
+  </ion-item>
+
+
+
+  <ion-button
+          *ngIf="activateButton()"
+          float-right
+          (click)="findRoute()"
+          routeDirection="forward"
+          padding
+  >
+    <ion-ripple-effect></ion-ripple-effect>
+    Find Buses
+  </ion-button>
+
+</div>
+
+
+  <br><br><br>
+
+
+
+
+
+
+  <ion-title *ngIf="resultView">
+    Available Buses
+  </ion-title>
+
+
+
+
+  <div *ngIf="isShowContent" text-sm-justify="3" >
+    <ion-card *ngFor="let obj of objVal">
+      <ion-card>
+        <ion-item>
+          <h2>{{obj.Heading}}</h2>
+        </ion-item>
+
+        <img src="{{obj.image_url}}">
+
+        <ion-card-content>
+          <p>Nice view. Good for relaxing. Best place for a vacation</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <ion-label>{{obj.RootSource}} </ion-label>
+          </ion-col>
+          <ion-col >
+            <ion-label >- {{obj.RootDestination}} </ion-label>
+          </ion-col>
+
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col>
+            <ion-label> {{obj.StartTime}}</ion-label>
+          </ion-col>
+          <ion-col >
+            <ion-label >- {{obj.EndTime}}</ion-label>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+    </ion-card>
+  </div>
+
+
+  <div *ngIf="searchResults.length > 0">
+    <ion-card *ngFor="let result of searchResults">
+      <ion-card-header>
+        <h3>Bus Number: {{result.RouteNo}}</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{result.RootSource}}</p>
+        <p>{{result.RootDestination}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+
+  <div>
+    <ion-card>
+
+      <ion-card-header class="input-map">
+        <h3>  Welcome to SLTB EXPRESS Online Service!  </h3>
+      </ion-card-header>
+
+      <ion-card-content>
+        Your online portal to reserve SriLanka Transport Board passenger transist service across Sri Lanka
+      </ion-card-content>
+
+      <ion-card-content>
+        Want your public transpotation and online bus ticket booking issue sorted?
+      </ion-card-content>
+
+      <ion-card class="bottom-des">
+        <p>Sri Lanka Transport Board</p>
+        <p>Customer Hotline : 077 2872877 </p>
+        <p>Support Email: sltb@express.lk</p>
+        <ion-badge color="warning"><a style="text-decoration: underline" (click)="goToTerms()">Terms and Conditions</a></ion-badge>
+      </ion-card>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

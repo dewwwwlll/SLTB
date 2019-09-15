@@ -23,4 +23,8 @@ export class SearchResultsPage implements OnInit {
     this.route.navigate(['home']);
   }
 
+  goBack() {
+    this.route.navigate(['search-for-busses']);
+  }
+
 }

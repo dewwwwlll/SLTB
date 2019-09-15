@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
 .a-seat{
   height: 40px;
   width: 40px;
-  border-radius: 4px;
-  border: 2px solid black;
+  border-radius: 9px;
+  border: 1px solid #001359;
   text-align: center;
+  background-color: white;
 }
 
 .a-blank-seat{
@@ -14,19 +17,53 @@
 }
 
 .selected-seat{
-  background: linear-gradient(110deg, #c7000b 60%, #ff244d 60%);
+  background: linear-gradient(to bottom, #af0004 0%, #650700 100%);
 }
 
 .booked-seat{
-  background: linear-gradient(110deg, #565656 60%, #6a6a6a 60%);
+  background: linear-gradient(to bottom, #111211 0%, #2b3533 100%);
+
 }
 
 .available-seat{
   background-color: white;
 }
 
-.a-seat p{
-  font-size: 25px;
-  color: black;
+.text-white {
+  color: white;
 }
 
+.text-gray{
+  color: #1e2023;
+}
+
+.a-seat p{
+  font-size: 20px;
+  padding-top: 4px;
+  font-weight: 800;
+}
+
+.background {
+background-image: url('/assets/seats1.jpg');
+}
+
+.select-seats-text {
+  font-family: "Berkshire Swash", cursive;
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 5, 55);
+  background-color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  border-radius: 13px;
+}
+
+.other-text {
+  font-size: 20px;
+  color: white;
+}
+
+.button-to-next{
+  color: white;
+  background-color: #001359;
+}

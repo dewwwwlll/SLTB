@@ -1,0 +1,125 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row style="height: 100%" >
+        <ion-col size="2">
+          <ion-button class="header-button" (click)="goBack()">
+            <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+        </ion-col>
+        <ion-col class="header-font">
+          SLTB EXPRESS
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #007aff" >
+<div class="background">
+  <ion-card class="background-white">
+    <ion-card-header>
+      <ion-card-title text-center="">
+        <ion-card-title>Payment Details</ion-card-title>
+        <p>{{journeyDetails.source}}</p>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Amount</p>
+          </ion-col>
+          <ion-col>
+            <p>{{journeyDetails.amount}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <p>Pay before</p>
+          </ion-col>
+          <ion-col>
+            <p style="color: red">{{payDate}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="background-white">
+    <ion-card-header>
+      <ion-grid>
+        <ion-row justify-content-center>
+            <h3>Card Details</h3>
+        </ion-row>
+        <ion-row justify-content-around>
+          <ion-col size="2">
+            <ion-img src="assets/imgs/visa-logo-preview.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+          <ion-col size="2">
+            <ion-img src="assets/imgs/master_card logo.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+          <ion-col size="2">
+            <ion-img src="assets/imgs/discover.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+          <ion-col size="2">
+            <ion-img src="assets/imgs/diners_club.png" height="40" width="40" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-header>
+
+  </ion-card>
+
+  <ion-card class="background-white">
+    <ion-card-header text-center="">
+      <ion-img src="assets/imgs/sampath.png" height="50" width="200"></ion-img>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label floating>Card Name</ion-label>
+        <ion-input type="text" [(ngModel)]="cardName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Card Number</ion-label>
+        <div *ngIf="imageUrl">
+          <ion-img [src]="imageUrl" height="50" width="50" style="width: 82px; height: 50px;"></ion-img>
+        </div>
+        <ion-input type="tel" autocomplete="cc-exp" id="cc-exp" [(ngModel)]="cardNumber" (change)="checkSupported()"></ion-input>      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>CVV Number</ion-label>
+              <ion-input type="number" [(ngModel)]="cvv"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Expiry Month</ion-label>
+              <ion-datetime [(ngModel)]="month" displayFormat="MMMM YY" min="2019-09-01" max="2050-12-31"></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row justify-content-end style="text-align: center">
+          <ion-button color="success" (click)="payButton()">
+            <ion-icon name="cash"></ion-icon>
+            Pay
+          </ion-button>
+          <!--<button type="button" (click)="checkSupported()">validity</button>-->
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</div>
+</ion-content>

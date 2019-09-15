@@ -15,18 +15,23 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import {ViewModalPage} from "./view-modal/view-modal.page";
+import {ViewModalPageModule} from "./view-modal/view-modal.module";
+import {RatingPagePageModule} from "./rating-page/rating-page.module";
 
 library.add(fas, far, fab);
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [ViewModalPage],
   imports: [
       BrowserModule,
       IonicModule.forRoot(),
       AppRoutingModule,
       HttpClientModule,
-      FontAwesomeModule
+      FontAwesomeModule,
+      ViewModalPageModule,
+      RatingPagePageModule
   ],
   providers: [
     StatusBar,

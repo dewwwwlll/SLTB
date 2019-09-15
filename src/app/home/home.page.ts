@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import {Router} from "@angular/router";
 
 declare const require: any;
 const freeSlotsData = require('../../assets/sampledata.json');
@@ -15,7 +16,7 @@ export class HomePage implements OnInit {
   totalPrice: number;
   @ViewChild('amount', {static: false}) price: ElementRef;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.seatList = freeSlotsData.rows;
@@ -53,6 +54,14 @@ export class HomePage implements OnInit {
         }
       }
     }
+  }
+
+  goToPayment() {
+    this.router.navigate(['paymnet1']);
+  }
+
+  goToSearchResults() {
+    this.router.navigate(['search-results']);
   }
 
 }

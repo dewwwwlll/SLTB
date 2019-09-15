@@ -1,0 +1,224 @@
+
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row style="height: 100%" >
+                <ion-col size="2">
+                    <ion-button class="header-button" (click)="goToSeats()">
+                        <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="3">
+                    <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+                </ion-col>
+                <ion-col class="header-font">
+                    SLTB EXPRESS
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+  <ion-card class="background-white">
+    <ion-card-header>
+      <h1>Journey Details</h1>
+      <h2>Bus Type: Normal A/C</h2>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col offset-1="">
+            <p><b>Source</b></p>
+            <p>{{journeyDetails.source}}</p>
+            <p>{{journeyDetails.departureTime}}</p>
+            <ion-icon name="arrow-round-up" style="color: red"></ion-icon>
+
+          </ion-col>
+          <ion-col>
+            <p><b>Destination</b></p>
+            <p>{{journeyDetails.destination}}</p>
+            <p>{{journeyDetails.arrivalTime}}</p>
+            <ion-icon name="arrow-round-down" style="color: green"></ion-icon>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+
+        </ion-row>
+      </ion-grid>
+
+      <hr>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2>Amount: <span>{{journeyDetails.amount}}</span></h2>
+          </ion-col>
+
+          <ion-col float-right="5">
+            <h2>Journey: <span>8h 00m</span></h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="background-white">
+    <ion-card-header>
+      <h1>My Details <span style="color: red">(Mandatory)</span></h1>
+
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-grid>
+        <ion-row>
+          <ion-item>
+            <!--<ion-label floating>Name <span style="color: red">*</span></ion-label>-->
+            <ion-input placeholder="Enter Name" type="text" [(ngModel)]="name" required></ion-input>
+            <ion-label *ngIf="IsEmptyName" ></ion-label>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <!--<ion-label floating>Phone <span style="color: red">*</span></ion-label>-->
+              <ion-input placeholder="Enter Phone" type="number" [(ngModel)]="phone" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <!--<ion-label floating>NIC/Passport </ion-label>-->
+              <ion-input placeholder="Enter Nic/Passport" type="text" [(ngModel)]="nic"  maxlength="10"></ion-input>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-item>
+            <!--<ion-label floating>Email </ion-label>-->
+            <ion-input placeholder="Enter Email" type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="background-white">
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card-title>
+              <h3>Passenger Details (Optional)</h3>
+            </ion-card-title>
+          </ion-col>
+
+          <ion-col text-right>
+            <ion-icon [name]="icon" style="font-size: 50px" (click)="changeIcon()"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-header>
+
+  </ion-card>
+
+  <ion-card class="card background-white" *ngIf="!IsArrowDown" style="transition: 0.29s all linear">
+    <ion-grid  *ngFor="let seat of seats">
+
+      <ion-row>
+        <ion-col>
+          <p>Seat No: {{seat.seatNo}}</p>
+        </ion-col>
+
+        <ion-col>
+          <!--<ion-row>-->
+          <ion-item>
+            <ion-checkbox (click)="checkSeat(seat.seatNo, $event)" [checked]="seat.IsSeatChecked"></ion-checkbox>
+            <ion-label >My Seat</ion-label>
+          </ion-item>
+          <!--</ion-row>-->
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" name="name" id="name" [(ngModel)]="seat.seatName" ></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Mobile No</ion-label>
+          <ion-input type="number" name="mobile" id="mobile" [(ngModel)]="seat.seatMobile"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating>NIC/Passport No</ion-label>
+          <ion-input type="text" name="nic" id="nic" [(ngModel)]="seat.seatNIC"></ion-input>
+        </ion-item>
+      </ion-row>
+
+
+      <hr>
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card class="background-white">
+    <ion-card-header>
+      <ion-card-title>
+        <h2 style="color: #007aff">Payment Method</h2>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col>
+            <ion-img src="assets/imgs/master_card logo.png" height="60" width="80" style="height: 60px; width: 60px"></ion-img>
+            <ion-img src="assets/imgs/visa-logo-preview.png" height="60" width="80" style="height: 60px; width: 60px"></ion-img>
+          </ion-col>
+
+          <ion-col>
+            <p>Pay with master card and visa</p>
+            <p style="font-style: italic">Pay with your credit, debit or shopping card</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>I agree to all the Terms and conditions</ion-label>
+              <ion-checkbox (click)="agreeTermsandConditions()"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-button [disabled]="!IsAgreed" color="primary" (click)="checkSubmit()" >Pay now</ion-button>
+          </ion-col>
+
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+  </div>
+</ion-content>

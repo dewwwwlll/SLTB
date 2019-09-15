@@ -1,4 +1,23 @@
 <div style="overflow-y: scroll">
+  <ion-header>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row style="height: 100%" >
+          <ion-col size="2">
+            <ion-button class="header-button" (click)="goBack()">
+              <fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+              <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+          </ion-col>
+          <ion-col class="header-font">
+              SLTB EXPRESS
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
   <ion-grid class="background">
     <div *ngFor="let singleRecord of selectted_bus_details">
       <ion-row>

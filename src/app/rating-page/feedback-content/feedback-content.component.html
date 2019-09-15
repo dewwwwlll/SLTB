@@ -1,0 +1,24 @@
+<div class="radius">
+  <ion-grid class="comment">
+    <ion-row class="comment-stars">
+      <ion-col size="3" align-self-center>
+        {{ feedback.rate }} / 5
+      </ion-col>
+      <ion-col size="9" align-self-center>
+        <rating [(ngModel)]="feedback.rate"
+                readonly="true"
+                required
+                size="default">
+        </rating>
+      </ion-col>
+    </ion-row>
+    <ion-row class="comment-body">
+      <div *ngIf="feedback.comment" class="comment-text">
+        <p>{{ feedback.comment }}</p>
+      </div>
+      <div *ngIf="!feedback.comment" class="comment-text">
+        <p>No comment!</p>
+      </div>
+    </ion-row>
+  </ion-grid>
+</div>

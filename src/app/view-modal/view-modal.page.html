@@ -1,0 +1,109 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-header>
+          <ion-toolbar>
+            <ion-grid>
+              <ion-row style="height: 100%" >
+                <!--<ion-col size="2">-->
+                  <!--<ion-button class="header-button" >-->
+                    <!--<fa-icon icon="arrow-left" slot="start" size="1x"></fa-icon>-->
+                  <!--</ion-button>-->
+                <!--</ion-col>-->
+                <ion-col size="4">
+                  <img src="../../assets/imgs/sltb_logo.png" height="51" width="103"/>
+                </ion-col>
+                <ion-col class="header-font">
+                  SLTB EXPRESS
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+        </ion-header>
+        <!--<ion-col>-->
+         <!---->
+        <!--</ion-col>-->
+
+        <!--<ion-col>-->
+          <!--<ion-buttons slot="end">-->
+            <!--<ion-button (click)="dismissModal()">Close</ion-button>-->
+          <!--</ion-buttons>-->
+        <!--</ion-col>-->
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-card-title>
+        <legend>Journey Details</legend>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Source: {{source}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Destination: {{destination}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <p>Departure Time: {{departure}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Arrival Time: {{arrival}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-card-title>
+        <legend>Passenger Details </legend>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Name: {{name}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Mobile Number: {{phone}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <p>NIC: {{nic}}</p>
+          </ion-col>
+
+          <ion-col>
+            <p>Email: {{email}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-end>
+          <ion-button color="danger" (click)="dismissModal()">Close</ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
